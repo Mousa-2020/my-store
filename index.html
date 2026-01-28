@@ -104,7 +104,10 @@ footer a{color:var(--accent);font-weight:bold;text-decoration:none}
 <div class="modal-content">
 <h3>تأكيد الطلب 📝</h3>
 <div id="cartItems"></div>
+
 <input id="customerName" placeholder="الاسم الكامل">
+<input id="customerLocation" placeholder="الموقع / العنوان التقريبي">
+
 <p><b>الدفع:</b> عند الاستلام</p>
 <p><b>التوصيل:</b> داخل بغداد</p>
 <div class="warning">⚠ الطلبات الجدية فقط – سيتم الاتصال لتأكيد الطلب</div>
@@ -227,6 +230,7 @@ saveCart();
 document.getElementById("total").innerText="0";
 document.getElementById("cartItems").innerHTML="";
 document.getElementById("customerName").value="";
+document.getElementById("customerLocation").value="";
 document.getElementById("modal").style.display="none";
 }
 closeConfirm();
@@ -238,9 +242,13 @@ pendingAction=null;
 
 function sendWhatsApp(){
 let name=document.getElementById("customerName").value.trim();
-if(!name)return alert("يرجى إدخال الاسم");
+let location=document.getElementById("customerLocation").value.trim();
+if(!name){alert("يرجى إدخال الاسم");return;}
+if(!location){alert("يرجى إدخال الموقع");return;}
+
 let list="";
 for(let n in cart){list+=`- ${n}\n`;}
+
 let msg=`السلام عليكم متجر موسى 👋
 
 أرغب بتأكيد طلب من داخل بغداد، التفاصيل:
@@ -250,6 +258,7 @@ ${list}
 💰 المجموع الكلي: ${total.toLocaleString()} د.ع
 
 📍 المحافظة: بغداد
+📍 الموقع: ${location}
 🚚 التوصيل: داخل بغداد
 💳 طريقة الدفع: الدفع عند الاستلام
 
@@ -258,9 +267,9 @@ ${list}
 - الاستبدال خلال 7 أيام بخلل مصنعي فقط
 
 الاسم: ${name}
-العنوان التقريبي:
 
 بانتظار تأكيدكم، شكراً 🌹`;
+
 window.open("https://wa.me/9647717538315?text="+encodeURIComponent(msg));
 document.getElementById("successModal").style.display="flex";
 }
