@@ -7,106 +7,234 @@
 
 <style>
 :root{
-  --primary:#2563eb;--secondary:#1e293b;--success:#22c55e;
-  --bg:#f8fafc;--text:#334155;--danger:#dc2626;
+  --primary:#1e40af;
+  --secondary:#0f172a;
+  --accent:#22c55e;
+  --bg:#f8fafc;
+  --card:#ffffff;
+  --text:#1e293b;
+  --muted:#64748b;
+  --danger:#dc2626;
 }
+
 body{
+  margin:0;
   font-family:'Segoe UI',Tahoma;
-  background:var(--bg);margin:0;color:var(--text);
+  background:var(--bg);
+  color:var(--text);
 }
+
+/* Top Bar */
 .top-bar{
-  background:var(--secondary);color:#fff;
-  text-align:center;padding:10px;font-size:.85rem;
+  background:var(--secondary);
+  color:#fff;
+  text-align:center;
+  padding:10px;
+  font-size:.85rem;
 }
+
+/* Header */
 header{
-  background:#fff;padding:30px 20px;text-align:center;
-  border-bottom:3px solid var(--primary);
+  background:var(--card);
+  text-align:center;
+  padding:30px 20px;
+  border-bottom:4px solid var(--primary);
 }
-header h1{margin:0;color:var(--primary)}
-header .desc{font-weight:700;line-height:1.8}
+header h1{
+  margin:0;
+  color:var(--primary);
+}
+header .desc{
+  margin-top:10px;
+  line-height:1.9;
+  font-weight:600;
+  color:var(--secondary);
+}
 
-.container{max-width:1000px;margin:auto;padding:20px}
+/* Layout */
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:20px;
+}
 
+/* Why Us */
 .why-us{
-  background:#fff;border:1px solid #ddd;
-  border-radius:15px;padding:20px;margin-bottom:30px
+  background:var(--card);
+  border-radius:16px;
+  padding:25px;
+  border:1px solid #e5e7eb;
+  margin-bottom:40px;
 }
-.why-us h2{text-align:center;color:var(--primary)}
+.why-us h2{
+  text-align:center;
+  color:var(--primary);
+}
 .why-us ul{
-  list-style:none;padding:0;
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:10px
+  list-style:none;
+  padding:0;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:12px;
 }
 .why-us li{
-  background:#f1f5f9;padding:10px;
-  border-radius:8px;font-weight:500;text-align:center
+  background:#f1f5f9;
+  padding:12px;
+  border-radius:10px;
+  text-align:center;
+  font-weight:500;
 }
 
-.section-title{text-align:center;font-size:1.8rem;margin:40px 0 20px}
-
+/* Products */
+.section-title{
+  text-align:center;
+  font-size:1.9rem;
+  margin-bottom:25px;
+}
 .products-grid{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:25px
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
 }
 .product-card{
-  background:#fff;border:1px solid #e2e8f0;
-  border-radius:15px;padding:20px;text-align:center
+  background:var(--card);
+  border-radius:18px;
+  padding:20px;
+  text-align:center;
+  border:1px solid #e5e7eb;
+  transition:.3s;
+}
+.product-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 12px 25px rgba(0,0,0,.08);
 }
 .product-card img{
-  width:100%;height:200px;object-fit:contain;margin-bottom:15px
+  width:100%;
+  height:200px;
+  object-fit:contain;
+  margin-bottom:15px;
 }
-.price{color:var(--primary);font-size:1.5rem;font-weight:bold}
+.price{
+  color:var(--primary);
+  font-size:1.5rem;
+  font-weight:700;
+}
 .add-btn{
-  background:var(--primary);color:#fff;border:none;
-  padding:12px;border-radius:8px;width:100%;
-  font-weight:bold;cursor:pointer
+  margin-top:10px;
+  width:100%;
+  background:var(--primary);
+  color:#fff;
+  border:none;
+  padding:12px;
+  border-radius:10px;
+  font-weight:bold;
+  cursor:pointer;
 }
 
+/* Cart Footer */
 .cart-footer{
-  position:fixed;bottom:0;left:0;right:0;
-  background:#fff;border-top:2px solid var(--primary);
-  padding:15px;display:flex;justify-content:space-between;
-  align-items:center;z-index:100
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  background:var(--card);
+  border-top:3px solid var(--primary);
+  padding:15px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:100;
 }
 .checkout-btn{
-  background:var(--success);color:#fff;
-  border:none;padding:12px 30px;border-radius:10px;
-  font-weight:bold;cursor:pointer
+  background:var(--accent);
+  color:#fff;
+  border:none;
+  padding:12px 30px;
+  border-radius:12px;
+  font-weight:bold;
+  cursor:pointer;
 }
 
+/* Toast */
 .toast{
-  position:fixed;bottom:90px;right:20px;
-  background:var(--success);color:#fff;
-  padding:10px 15px;border-radius:8px;
-  display:none;font-size:.9rem
+  position:fixed;
+  bottom:90px;
+  right:20px;
+  background:var(--accent);
+  color:#fff;
+  padding:10px 16px;
+  border-radius:10px;
+  display:none;
+  font-size:.9rem;
 }
 
+/* Modal */
 .modal{
-  display:none;position:fixed;inset:0;
-  background:rgba(0,0,0,.7);
-  align-items:center;justify-content:center;z-index:1000
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.75);
+  align-items:center;
+  justify-content:center;
+  z-index:1000;
 }
 .modal-content{
-  background:#fff;border-radius:15px;
-  padding:20px;width:90%;max-width:450px
+  background:var(--card);
+  width:90%;
+  max-width:480px;
+  border-radius:18px;
+  padding:25px;
 }
 .cart-item{
-  display:flex;justify-content:space-between;
-  margin-bottom:8px;font-size:.9rem
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:8px;
+  font-size:.95rem;
 }
-.remove-btn{
-  color:var(--danger);cursor:pointer;font-size:.8rem
+.remove{
+  color:var(--danger);
+  cursor:pointer;
+}
+input{
+  width:100%;
+  padding:12px;
+  margin-top:12px;
+  border-radius:10px;
+  border:1px solid #cbd5f5;
+  font-size:1rem;
 }
 .confirm-btn{
-  background:var(--success);color:#fff;
-  border:none;width:100%;padding:14px;
-  border-radius:8px;font-weight:bold;margin-top:15px
+  margin-top:20px;
+  width:100%;
+  background:var(--accent);
+  color:#fff;
+  border:none;
+  padding:14px;
+  border-radius:12px;
+  font-weight:bold;
 }
-.warning{color:var(--danger);font-size:.85rem;margin-top:10px}
+.warning{
+  margin-top:10px;
+  color:var(--danger);
+  font-size:.85rem;
+}
 
+/* Guarantee */
+.guarantee{
+  margin-top:50px;
+  background:#fffbeb;
+  border:1px solid #fde68a;
+  padding:20px;
+  border-radius:16px;
+}
+
+/* Footer */
 footer{
-  background:var(--secondary);color:#fff;
-  text-align:center;padding:40px 20px 100px;margin-top:50px
+  margin-top:50px;
+  padding:40px 20px 110px;
+  background:var(--secondary);
+  color:#fff;
+  text-align:center;
 }
 </style>
 </head>
@@ -132,100 +260,115 @@ footer{
 <h2>لماذا تختار متجر موسى؟</h2>
 <ul>
 <li>✔ منتجات أصلية 100%</li>
-<li>✔ فحص عند الاستلام</li>
-<li>✔ توصيل بغداد 24 ساعة</li>
-<li>✔ استبدال 7 أيام للخلل</li>
-<li>✔ دعم واتساب مباشر</li>
+<li>✔ فحص المنتج عند الاستلام</li>
+<li>✔ توصيل داخل بغداد خلال 24 ساعة</li>
+<li>✔ استبدال 7 أيام للخلل المصنعي</li>
+<li>✔ دعم مباشر عبر واتساب</li>
 </ul>
 </div>
 
-<h2 class="section-title">منتجاتنا</h2>
+<h2 class="section-title">منتجاتنا المتوفرة</h2>
+<div class="products-grid" id="productsGrid"></div>
 
-<div class="products-grid">
-<div class="product-card">
-<img src="https://images.unsplash.com/photo-1610671914904-5d97d759cd7a?w=500">
-<h3>Galaxy Watch 6</h3>
-<span class="price">285,000 د.ع</span>
-<button class="add-btn" onclick="addToCart('Galaxy Watch 6',285000)">أضف إلى الطلب 🛒</button>
-</div>
-
-<div class="product-card">
-<img src="https://images.unsplash.com/photo-1588423770574-910ae26c856f?w=500">
-<h3>Airpods 3</h3>
-<span class="price">210,000 د.ع</span>
-<button class="add-btn" onclick="addToCart('Airpods 3',210000)">أضف إلى الطلب 🛒</button>
-</div>
+<div class="guarantee">
+<h3>🔒 الضمان وسياسة الاستبدال</h3>
+<p>
+فحص المنتج عند الاستلام مسموح.
+الاستبدال خلال 7 أيام في حال وجود خلل مصنعي فقط.
+لا يوجد استرجاع أو تبديل بعد الاستخدام أو كسر التغليف.
+الطلبات داخل بغداد فقط.
+</p>
 </div>
 
 </div>
 
 <div class="cart-footer">
 <div>المجموع: <b id="total">0</b> د.ع</div>
-<button class="checkout-btn" onclick="openModal()">إتمام الطلب</button>
+<button class="checkout-btn" onclick="openModal()">إتمام الطلب عبر واتساب</button>
 </div>
 
 <div class="toast" id="toast">تمت الإضافة إلى الطلب</div>
 
 <div class="modal" id="modal">
 <div class="modal-content">
-<h3>تأكيد الطلب</h3>
+<h3>تأكيد الطلب 📝</h3>
 <div id="cartItems"></div>
-<hr>
+
+<input id="customerName" placeholder="الاسم الكامل">
+
 <p><b>الدفع:</b> عند الاستلام</p>
 <p><b>التوصيل:</b> داخل بغداد</p>
-<span class="warning">⚠ الطلبات الجدية فقط</span>
-<button class="confirm-btn" onclick="sendWhatsApp()">إرسال الطلب عبر واتساب</button>
+<div class="warning">⚠ الطلبات الجدية فقط – سيتم الاتصال لتأكيد الطلب</div>
+
+<button class="confirm-btn" onclick="sendWhatsApp()">تأكيد وإرسال الطلب</button>
 </div>
 </div>
 
 <footer>
 <p>© متجر موسى للإلكترونيات 2026</p>
-<small>الطلب داخل بغداد فقط – الدفع عند الاستلام</small>
+<small>الطلب داخل بغداد فقط – الدفع عند الاستلام فقط</small>
 </footer>
 
 <script>
-let cart={}, total=0;
+const products=[
+{name:"Apple Watch Series 9",price:520000,image:"https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=500"},
+{name:"Galaxy Watch 6",price:285000,image:"https://images.unsplash.com/photo-1610671914904-5d97d759cd7a?w=500"},
+{name:"AirPods Pro 2",price:310000,image:"https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?w=500"},
+{name:"Samsung Buds 2 Pro",price:195000,image:"https://images.unsplash.com/photo-1612197527278-4caa7c35a3c4?w=500"},
+{name:"رأس شاحن Apple 20W",price:35000,image:"https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=500"},
+{name:"وصلة Type-C أصلية",price:15000,image:"https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=500"},
+{name:"باور بانك Anker 20,000mAh",price:55000,image:"https://images.unsplash.com/photo-1609592424089-9890374108e7?w=500"},
+{name:"نظارة Apple Vision Pro",price:4800000,image:"https://images.unsplash.com/photo-1700064760148-ec5b5b52f6b3?w=500"}
+];
 
-function showToast(){
-  let t=document.getElementById('toast');
-  t.style.display='block';
-  setTimeout(()=>t.style.display='none',2000);
-}
+const grid=document.getElementById("productsGrid");
+products.forEach(p=>{
+grid.innerHTML+=`
+<div class="product-card">
+<img src="${p.image}">
+<h3>${p.name}</h3>
+<span class="price">${p.price.toLocaleString()} د.ع</span>
+<button class="add-btn" onclick="addToCart('${p.name}',${p.price})">أضف إلى الطلب 🛒</button>
+</div>`;
+});
 
-function addToCart(name,price){
-  cart[name]?cart[name].qty++:cart[name]={price,qty:1};
-  total+=price;
-  document.getElementById('total').innerText=total.toLocaleString();
-  showToast();
-}
-
+let cart={},total=0;
+function showToast(){let t=document.getElementById("toast");t.style.display="block";setTimeout(()=>t.style.display="none",1800);}
+function addToCart(n,p){cart[n]?cart[n].qty++:cart[n]={price:p,qty:1};total+=p;document.getElementById("total").innerText=total.toLocaleString();showToast();}
 function openModal(){
-  let items=document.getElementById('cartItems');
-  items.innerHTML='';
-  for(let n in cart){
-    items.innerHTML+=`
-    <div class="cart-item">
-      ${cart[n].qty} × ${n}
-      <span class="remove-btn" onclick="removeItem('${n}')">حذف</span>
-    </div>`;
-  }
-  document.getElementById('modal').style.display='flex';
+let items=document.getElementById("cartItems");items.innerHTML="";
+for(let n in cart){
+items.innerHTML+=`<div class="cart-item">${cart[n].qty} × ${n}<span class="remove" onclick="removeItem('${n}')">حذف</span></div>`;
 }
-
-function removeItem(name){
-  total-=cart[name].price*cart[name].qty;
-  delete cart[name];
-  document.getElementById('total').innerText=total.toLocaleString();
-  openModal();
+document.getElementById("modal").style.display="flex";
 }
-
+function removeItem(n){total-=cart[n].price*cart[n].qty;delete cart[n];document.getElementById("total").innerText=total.toLocaleString();openModal();}
 function sendWhatsApp(){
-  let msg="السلام عليكم متجر موسى 👋\n\nطلب من داخل بغداد:\n";
-  for(let n in cart){
-    msg+=`${cart[n].qty} × ${n}\n`;
-  }
-  msg+=`\nالمجموع: ${total.toLocaleString()} د.ع\nالدفع عند الاستلام`;
-  window.open("https://wa.me/9647717538315?text="+encodeURIComponent(msg));
+let name=document.getElementById("customerName").value.trim();
+if(!name)return alert("يرجى إدخال الاسم");
+let list="";
+for(let n in cart){list+=`- ${n}\n`;}
+let msg=`السلام عليكم متجر موسى 👋
+
+أرغب بتأكيد طلب من داخل بغداد، التفاصيل:
+
+🛒 المنتجات:
+${list}
+💰 المجموع الكلي: ${total.toLocaleString()} د.ع
+
+📍 المحافظة: بغداد
+🚚 التوصيل: داخل بغداد
+💳 طريقة الدفع: الدفع عند الاستلام
+
+✅ ملاحظة:
+- فحص المنتج عند الاستلام
+- الاستبدال خلال 7 أيام بخلل مصنعي فقط
+
+الاسم: ${name}
+العنوان التقريبي:
+
+بانتظار تأكيدكم، شكراً 🌹`;
+window.open("https://wa.me/9647717538315?text="+encodeURIComponent(msg));
 }
 </script>
 
