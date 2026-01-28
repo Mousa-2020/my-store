@@ -16,226 +16,36 @@
   --muted:#64748b;
   --danger:#dc2626;
 }
-
-body{
-  margin:0;
-  font-family:'Segoe UI',Tahoma;
-  background:var(--bg);
-  color:var(--text);
-}
-
-/* Top Bar */
-.top-bar{
-  background:var(--secondary);
-  color:#fff;
-  text-align:center;
-  padding:10px;
-  font-size:.85rem;
-}
-
-/* Header */
-header{
-  background:var(--card);
-  text-align:center;
-  padding:30px 20px;
-  border-bottom:4px solid var(--primary);
-}
-header h1{
-  margin:0;
-  color:var(--primary);
-}
-header .desc{
-  margin-top:10px;
-  line-height:1.9;
-  font-weight:600;
-  color:var(--secondary);
-}
-
-/* Layout */
-.container{
-  max-width:1100px;
-  margin:auto;
-  padding:20px;
-}
-
-/* Why Us */
-.why-us{
-  background:var(--card);
-  border-radius:16px;
-  padding:25px;
-  border:1px solid #e5e7eb;
-  margin-bottom:40px;
-}
-.why-us h2{
-  text-align:center;
-  color:var(--primary);
-}
-.why-us ul{
-  list-style:none;
-  padding:0;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:12px;
-}
-.why-us li{
-  background:#f1f5f9;
-  padding:12px;
-  border-radius:10px;
-  text-align:center;
-  font-weight:500;
-}
-
-/* Products */
-.section-title{
-  text-align:center;
-  font-size:1.9rem;
-  margin-bottom:25px;
-}
-.products-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:25px;
-}
-.product-card{
-  background:var(--card);
-  border-radius:18px;
-  padding:20px;
-  text-align:center;
-  border:1px solid #e5e7eb;
-  transition:.3s;
-}
-.product-card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 12px 25px rgba(0,0,0,.08);
-}
-.product-card img{
-  width:100%;
-  height:200px;
-  object-fit:contain;
-  margin-bottom:15px;
-}
-.price{
-  color:var(--primary);
-  font-size:1.5rem;
-  font-weight:700;
-}
-.add-btn{
-  margin-top:10px;
-  width:100%;
-  background:var(--primary);
-  color:#fff;
-  border:none;
-  padding:12px;
-  border-radius:10px;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-/* Cart Footer */
-.cart-footer{
-  position:fixed;
-  bottom:0;
-  left:0;
-  right:0;
-  background:var(--card);
-  border-top:3px solid var(--primary);
-  padding:15px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  z-index:100;
-}
-.checkout-btn{
-  background:var(--accent);
-  color:#fff;
-  border:none;
-  padding:12px 30px;
-  border-radius:12px;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-/* Toast */
-.toast{
-  position:fixed;
-  bottom:90px;
-  right:20px;
-  background:var(--accent);
-  color:#fff;
-  padding:10px 16px;
-  border-radius:10px;
-  display:none;
-  font-size:.9rem;
-}
-
-/* Modal */
-.modal{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.75);
-  align-items:center;
-  justify-content:center;
-  z-index:1000;
-}
-.modal-content{
-  background:var(--card);
-  width:90%;
-  max-width:480px;
-  border-radius:18px;
-  padding:25px;
-}
-.cart-item{
-  display:flex;
-  justify-content:space-between;
-  margin-bottom:8px;
-  font-size:.95rem;
-}
-.remove{
-  color:var(--danger);
-  cursor:pointer;
-}
-input{
-  width:100%;
-  padding:12px;
-  margin-top:12px;
-  border-radius:10px;
-  border:1px solid #cbd5f5;
-  font-size:1rem;
-}
-.confirm-btn{
-  margin-top:20px;
-  width:100%;
-  background:var(--accent);
-  color:#fff;
-  border:none;
-  padding:14px;
-  border-radius:12px;
-  font-weight:bold;
-}
-.warning{
-  margin-top:10px;
-  color:var(--danger);
-  font-size:.85rem;
-}
-
-/* Guarantee */
-.guarantee{
-  margin-top:50px;
-  background:#fffbeb;
-  border:1px solid #fde68a;
-  padding:20px;
-  border-radius:16px;
-}
-
-/* Footer */
-footer{
-  margin-top:50px;
-  padding:40px 20px 110px;
-  background:var(--secondary);
-  color:#fff;
-  text-align:center;
-}
+body{margin:0;font-family:'Segoe UI',Tahoma;background:var(--bg);color:var(--text)}
+.top-bar{background:var(--secondary);color:#fff;text-align:center;padding:10px;font-size:.85rem}
+header{background:var(--card);text-align:center;padding:30px 20px;border-bottom:4px solid var(--primary)}
+header h1{margin:0;color:var(--primary)}
+header .desc{margin-top:10px;line-height:1.9;font-weight:600;color:var(--secondary)}
+.container{max-width:1100px;margin:auto;padding:20px}
+.why-us{background:var(--card);border-radius:16px;padding:25px;border:1px solid #e5e7eb;margin-bottom:40px}
+.why-us h2{text-align:center;color:var(--primary)}
+.why-us ul{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.why-us li{background:#f1f5f9;padding:12px;border-radius:10px;text-align:center;font-weight:500}
+.section-title{text-align:center;font-size:1.9rem;margin-bottom:25px}
+.products-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px}
+.product-card{background:var(--card);border-radius:18px;padding:20px;text-align:center;border:1px solid #e5e7eb;transition:.3s}
+.product-card:hover{transform:translateY(-6px);box-shadow:0 12px 25px rgba(0,0,0,.08)}
+.product-card img{width:100%;height:200px;object-fit:contain;margin-bottom:15px}
+.price{color:var(--primary);font-size:1.5rem;font-weight:700}
+.add-btn{margin-top:10px;width:100%;background:var(--primary);color:#fff;border:none;padding:12px;border-radius:10px;font-weight:bold;cursor:pointer}
+.cart-footer{position:fixed;bottom:0;left:0;right:0;background:var(--card);border-top:3px solid var(--primary);padding:15px;display:flex;justify-content:space-between;align-items:center;z-index:100}
+.checkout-btn{background:var(--accent);color:#fff;border:none;padding:12px 30px;border-radius:12px;font-weight:bold;cursor:pointer}
+.toast{position:fixed;bottom:90px;right:20px;background:var(--accent);color:#fff;padding:10px 16px;border-radius:10px;display:none;font-size:.9rem}
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);align-items:center;justify-content:center;z-index:1000}
+.modal-content{background:var(--card);width:90%;max-width:480px;border-radius:18px;padding:25px}
+.cart-item{display:flex;justify-content:space-between;margin-bottom:8px;font-size:.95rem}
+.remove{color:var(--danger);cursor:pointer}
+input{width:100%;padding:12px;margin-top:12px;border-radius:10px;border:1px solid #cbd5f5;font-size:1rem}
+.confirm-btn{margin-top:12px;width:100%;background:var(--accent);color:#fff;border:none;padding:14px;border-radius:12px;font-weight:bold;cursor:pointer}
+.warning{margin-top:10px;color:var(--danger);font-size:.85rem}
+.guarantee{margin-top:50px;background:#fffbeb;border:1px solid #fde68a;padding:20px;border-radius:16px}
+footer{margin-top:50px;padding:40px 20px 110px;background:var(--secondary);color:#fff;text-align:center}
+footer a{color:var(--accent);font-weight:bold;text-decoration:none}
 </style>
 </head>
 
@@ -289,23 +99,47 @@ footer{
 
 <div class="toast" id="toast">تمت الإضافة إلى الطلب</div>
 
+<!-- Order Modal -->
 <div class="modal" id="modal">
 <div class="modal-content">
 <h3>تأكيد الطلب 📝</h3>
 <div id="cartItems"></div>
-
 <input id="customerName" placeholder="الاسم الكامل">
-
 <p><b>الدفع:</b> عند الاستلام</p>
 <p><b>التوصيل:</b> داخل بغداد</p>
 <div class="warning">⚠ الطلبات الجدية فقط – سيتم الاتصال لتأكيد الطلب</div>
 
 <button class="confirm-btn" onclick="sendWhatsApp()">تأكيد وإرسال الطلب</button>
+<button class="confirm-btn" style="background:#e5e7eb;color:#1e293b" onclick="requestClear()">إلغاء الطلب والرجوع</button>
+<button class="confirm-btn" style="background:#64748b" onclick="requestExit()">🚪 خروج</button>
+</div>
+</div>
+
+<!-- Confirm Modal -->
+<div class="modal" id="confirmModal">
+<div class="modal-content">
+<h3>تأكيد الإجراء</h3>
+<p id="confirmText"></p>
+<button class="confirm-btn" onclick="confirmAction()">نعم، متابعة</button>
+<button class="confirm-btn" style="background:#e5e7eb;color:#1e293b" onclick="closeConfirm()">إلغاء</button>
+</div>
+</div>
+
+<!-- Success Modal -->
+<div class="modal" id="successModal">
+<div class="modal-content">
+<h3>✅ تم فتح واتساب</h3>
+<p>تم تحويلك إلى واتساب لإرسال الطلب.<br>في حال لم يفتح، يرجى المحاولة مرة أخرى.</p>
+<button class="confirm-btn" onclick="closeSuccess()">حسناً</button>
 </div>
 </div>
 
 <footer>
 <p>© متجر موسى للإلكترونيات 2026</p>
+<p>
+📧 للتواصل المباشر:
+<a href="mailto:mousasaleh2024@gmail.com">mousasaleh2024@gmail.com</a>
+</p>
 <small>الطلب داخل بغداد فقط – الدفع عند الاستلام فقط</small>
 </footer>
 
@@ -332,17 +166,76 @@ grid.innerHTML+=`
 </div>`;
 });
 
-let cart={},total=0;
-function showToast(){let t=document.getElementById("toast");t.style.display="block";setTimeout(()=>t.style.display="none",1800);}
-function addToCart(n,p){cart[n]?cart[n].qty++:cart[n]={price:p,qty:1};total+=p;document.getElementById("total").innerText=total.toLocaleString();showToast();}
+let cart=JSON.parse(localStorage.getItem("cart"))||{};
+let total=JSON.parse(localStorage.getItem("total"))||0;
+document.getElementById("total").innerText=total.toLocaleString();
+
+function saveCart(){
+localStorage.setItem("cart",JSON.stringify(cart));
+localStorage.setItem("total",JSON.stringify(total));
+}
+
+function showToast(){
+let t=document.getElementById("toast");
+t.style.display="block";
+setTimeout(()=>t.style.display="none",1800);
+}
+
+function addToCart(n,p){
+cart[n]?cart[n].qty++:cart[n]={price:p,qty:1};
+total+=p;
+document.getElementById("total").innerText=total.toLocaleString();
+saveCart();
+showToast();
+}
+
 function openModal(){
-let items=document.getElementById("cartItems");items.innerHTML="";
+let items=document.getElementById("cartItems");
+items.innerHTML="";
 for(let n in cart){
 items.innerHTML+=`<div class="cart-item">${cart[n].qty} × ${n}<span class="remove" onclick="removeItem('${n}')">حذف</span></div>`;
 }
 document.getElementById("modal").style.display="flex";
 }
-function removeItem(n){total-=cart[n].price*cart[n].qty;delete cart[n];document.getElementById("total").innerText=total.toLocaleString();openModal();}
+
+function removeItem(n){
+total-=cart[n].price*cart[n].qty;
+delete cart[n];
+saveCart();
+document.getElementById("total").innerText=total.toLocaleString();
+openModal();
+}
+
+let pendingAction=null;
+function requestExit(){
+pendingAction="exit";
+document.getElementById("confirmText").innerText="هل تريد الخروج من صفحة التأكيد؟ الطلب سيبقى محفوظ.";
+document.getElementById("confirmModal").style.display="flex";
+}
+function requestClear(){
+pendingAction="clear";
+document.getElementById("confirmText").innerText="هل أنت متأكد من إلغاء الطلب بالكامل؟ سيتم حذف جميع المنتجات.";
+document.getElementById("confirmModal").style.display="flex";
+}
+function confirmAction(){
+if(pendingAction==="exit"){
+document.getElementById("modal").style.display="none";
+}
+if(pendingAction==="clear"){
+cart={};total=0;
+saveCart();
+document.getElementById("total").innerText="0";
+document.getElementById("cartItems").innerHTML="";
+document.getElementById("customerName").value="";
+document.getElementById("modal").style.display="none";
+}
+closeConfirm();
+}
+function closeConfirm(){
+document.getElementById("confirmModal").style.display="none";
+pendingAction=null;
+}
+
 function sendWhatsApp(){
 let name=document.getElementById("customerName").value.trim();
 if(!name)return alert("يرجى إدخال الاسم");
@@ -369,6 +262,11 @@ ${list}
 
 بانتظار تأكيدكم، شكراً 🌹`;
 window.open("https://wa.me/9647717538315?text="+encodeURIComponent(msg));
+document.getElementById("successModal").style.display="flex";
+}
+
+function closeSuccess(){
+document.getElementById("successModal").style.display="none";
 }
 </script>
 
