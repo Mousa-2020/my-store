@@ -3,151 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>متجري الاحترافي</title>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <title>متجر موسى للإلكترونيات</title>
     <style>
-        :root { --primary: #2563eb; --secondary: #10b981; --bg: #f3f4f6; }
-        body { font-family: 'Tajawal', sans-serif; background: var(--bg); margin: 0; padding: 20px; }
-        .container { max-width: 900px; margin: auto; }
-        h1 { text-align: center; color: #333; margin-bottom: 30px; }
-        
-        /* تصميم عرض المنتجات */
-        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
-        .card { background: white; border-radius: 15px; padding: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center; border: 1px solid #eee; }
-        .card img { width: 100%; height: 180px; object-fit: cover; border-radius: 10px; margin-bottom: 15px; background: #fafafa; }
-        .card h3 { margin: 10px 0; color: #333; }
-        .card .price-tag { color: var(--secondary); font-weight: bold; font-size: 1.1em; margin-bottom: 15px; }
-        
-        /* الفاتورة */
-        .invoice-section { background: white; padding: 30px; border-radius: 15px; margin-top: 40px; border: 2px solid #ddd; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
-        th, td { border-bottom: 1px solid #eee; padding: 15px; text-align: right; }
-        th { background: #f8f9fa; color: #555; }
-        
-        .total-area { background: #f1f5f9; padding: 20px; border-radius: 10px; margin-top: 10px; }
-        .total-area p { margin: 5px 0; font-size: 1.2em; display: flex; justify-content: space-between; }
-        .total-area strong { color: #e11d48; }
-
-        /* الأزرار */
-        .buttons-group { display: flex; gap: 15px; margin-top: 25px; }
-        button { flex: 1; padding: 15px; border: none; border-radius: 10px; cursor: pointer; font-weight: bold; font-family: 'Tajawal'; font-size: 1em; transition: 0.3s; }
-        .btn-add { background: var(--primary); color: white; width: 100%; }
-        .btn-add:hover { background: #1d4ed8; }
-        .btn-wa { background: #25d366; color: white; }
-        .btn-wa:hover { background: #15803d; }
-        .btn-print { background: #334155; color: white; }
-
-        /* تنسيق الطباعة (يخفي كل شيء عدا الفاتورة) */
-        @media print {
-            .products-grid, .btn-add, .btn-wa, h1, .btn-print, .buttons-group { display: none !important; }
-            body { background: white; padding: 0; }
-            .invoice-section { border: none; width: 100%; margin: 0; }
-            .invoice-section h2 { color: black !important; }
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e293b;
+            --accent-color: #f59e0b;
+            --bg-color: #f8fafc;
         }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--bg-color); margin: 0; padding: 20px; }
+        header { text-align: center; padding: 30px 20px; background: var(--secondary-color); color: white; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+        header h1 { margin: 0; font-size: 2rem; }
+        .container { max-width: 1000px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .product-card { background: white; border-radius: 15px; padding: 20px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: 0.3s; border: 1px solid #e2e8f0; }
+        .product-card:hover { transform: translateY(-10px); box-shadow: 0 12px 20px rgba(0,0,0,0.15); }
+        .product-card img { width: 100%; height: 220px; object-fit: cover; border-radius: 12px; margin-bottom: 15px; }
+        .product-card h3 { color: var(--secondary-color); margin: 10px 0; font-size: 1.3rem; }
+        .price { color: var(--primary-color); font-weight: bold; font-size: 1.4rem; margin: 10px 0 20px; display: block; }
+        .order-btn { background: #25d366; color: white; border: none; padding: 12px 20px; border-radius: 10px; cursor: pointer; width: 100%; font-size: 1.1rem; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 10px; transition: 0.2s; }
+        .order-btn:hover { background: #128c7e; }
+        .footer { text-align: center; margin-top: 50px; color: #64748b; padding-bottom: 20px; }
     </style>
 </head>
 <body>
 
+<header>
+    <h1>متجر موسى للإلكترونيات 🛒</h1>
+    <p>أحدث التقنيات الأصلية في العراق - توصيل لكافة المحافظات</p>
+</header>
+
 <div class="container">
-    <h1>✨ متجري الإلكتروني</h1>
+    <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1610671914904-5d97d759cd7a?w=500" alt="Samsung Watch">
+        <h3>ساعة سامسونج Galaxy Watch 6</h3>
+        <span class="price">285,000 د.ع</span>
+        <button class="order-btn" onclick="orderNow('ساعة سامسونج Galaxy Watch 6', '285,000')">اطلب عبر واتساب ✅</button>
+    </div>
 
-    <div class="products-grid" id="products-list"></div>
+    <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1588423770574-910ae26c856f?w=500" alt="Apple Airpods">
+        <h3>سماعات Apple Airpods 3</h3>
+        <span class="price">210,000 د.ع</span>
+        <button class="order-btn" onclick="orderNow('سماعات آبل Airpods 3', '210,000')">اطلب عبر واتساب ✅</button>
+    </div>
 
-    <div class="invoice-section" id="invoice">
-        <h2 style="text-align: center; color: var(--primary);">🧾 فاتورة الحجز</h2>
-        <p style="text-align: center; color: #666;">التاريخ: <span id="date"></span></p>
-        
-        <table>
-            <thead>
-                <tr>
-                    <th>المنتج</th>
-                    <th>بالدينار</th>
-                    <th>بالدولار ($)</th>
-                </tr>
-            </thead>
-            <tbody id="cart-rows">
-                </tbody>
-        </table>
-        
-        <div class="total-area">
-            <p>المجموع الكلي (ع.د): <strong id="total-local">0</strong></p>
-            <p>المجموع بالدولار ($): <strong id="total-usd">0.00</strong></p>
-        </div>
+    <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1609592424089-9890374108e7?w=500" alt="Power Bank">
+        <h3>باور بانك Anker السريع</h3>
+        <span class="price">55,000 د.ع</span>
+        <button class="order-btn" onclick="orderNow('باور بانك أنكر', '55,000')">اطلب عبر واتساب ✅</button>
+    </div>
 
-        <div class="buttons-group">
-            <button class="btn-wa" onclick="sendToWhatsApp()">إرسال الطلب واتساب ✅</button>
-            <button class="btn-print" onclick="window.print()">تحميل الفاتورة PDF 🖨️</button>
-        </div>
+    <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=500" alt="iPhone Charger">
+        <h3>رأس شاحن آيفون 20W أصلي</h3>
+        <span class="price">35,000 د.ع</span>
+        <button class="order-btn" onclick="orderNow('شاحن آيفون سريع', '35,000')">اطلب عبر واتساب ✅</button>
     </div>
 </div>
 
+<div class="footer">
+    <p>جميع الحقوق محفوظة لمتجر موسى © 2026</p>
+</div>
+
 <script>
-    // --- (1) أضف منتجاتك هنا ---
-    const myProducts = [
-        { id: 1, name: "منتج تجريبي 1", price: 25000, img: "https://via.placeholder.com/300x200?text=Product+1" },
-        { id: 2, name: "منتج تجريبي 2", price: 50000, img: "https://via.placeholder.com/300x200?text=Product+2" },
-        { id: 3, name: "منتج تجريبي 3", price: 100000, img: "https://via.placeholder.com/300x200?text=Product+3" }
-    ];
-
-    // --- (2) إعدادات العملة ---
-    const EXCHANGE_RATE = 1500; // سعر صرف الدولار مقابل الدينار
-    let cart = [];
-
-    // وظيفة عرض المنتجات
-    function displayProducts() {
-        const grid = document.getElementById('products-list');
-        grid.innerHTML = myProducts.map(p => `
-            <div class="card">
-                <img src="${p.img}" alt="${p.name}">
-                <h3>${p.name}</h3>
-                <div class="price-tag">${p.price.toLocaleString()} دينار</div>
-                <button class="btn-add" onclick="addToCart(${p.id})">إضافة للسلة</button>
-            </div>
-        `).join('');
+    function orderNow(productName, price) {
+        // رقم هاتفك الذي زودتني به
+        let phoneNumber = "9647717538315"; 
+        let text = `مرحباً متجر موسى، أود طلب المنتج التالي:\n\n📌 الاسم: ${productName}\n💰 السعر: ${price} د.ع\n\nيرجى التواصل معي لإكمال الطلب.`;
+        let encodedText = encodeURIComponent(text);
+        window.open(`https://wa.me/${phoneNumber}?text=${encodedText}`, '_blank');
     }
-
-    // وظيفة إضافة للمنتج للسلة
-    function addToCart(id) {
-        const item = myProducts.find(p => p.id === id);
-        cart.push(item);
-        renderInvoice();
-    }
-
-    // وظيفة تحديث الفاتورة
-    function renderInvoice() {
-        const tbody = document.getElementById('cart-rows');
-        document.getElementById('date').innerText = new Date().toLocaleDateString('ar-IQ');
-
-        tbody.innerHTML = cart.map(item => `
-            <tr>
-                <td>${item.name}</td>
-                <td>${item.price.toLocaleString()}</td>
-                <td>$ ${(item.price/EXCHANGE_RATE).toFixed(2)}</td>
-            </tr>
-        `).join('');
-
-        const totalLocal = cart.reduce((sum, item) => sum + item.price, 0);
-        document.getElementById('total-local').innerText = totalLocal.toLocaleString() + " دينار";
-        document.getElementById('total-usd').innerText = (totalLocal / EXCHANGE_RATE).toFixed(2);
-    }
-
-    // وظيفة الإرسال للواتساب الخاص بك
-    function sendToWhatsApp() {
-        if(cart.length === 0) return alert("السلة فارغة، يرجى اختيار منتجات أولاً");
-        
-        let phone = "9647717538315"; // رقمك العراقي
-        let msg = `*طلب حجز جديد من موقعي*\n\n`;
-        cart.forEach((i, index) => {
-            msg += `${index+1}. ${i.name} (${i.price.toLocaleString()} د.ع)\n`;
-        });
-        msg += `\n*المجموع الكلي:* ${document.getElementById('total-local').innerText}\n`;
-        msg += `*المجموع بالدولار:* $ ${document.getElementById('total-usd').innerText}`;
-        
-        window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`);
-    }
-
-    // تشغيل العرض عند فتح الصفحة
-    displayProducts();
 </script>
 
 </body>
