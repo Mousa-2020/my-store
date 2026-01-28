@@ -1,160 +1,232 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>متجر موسى للإلكترونيات | بغداد</title>
-    <style>
-        :root {
-            --primary: #2563eb; --secondary: #1e293b; --accent: #f59e0b;
-            --success: #22c55e; --bg: #f8fafc; --text: #334155;
-        }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--bg); margin: 0; padding: 0; color: var(--text); }
-        
-        /* الشريط العلوي */
-        .top-bar { background: var(--secondary); color: white; padding: 10px; text-align: center; font-size: 0.85rem; }
-        
-        /* الهيدر */
-        header { background: white; padding: 30px 20px; text-align: center; border-bottom: 3px solid var(--primary); }
-        header h1 { margin: 0; color: var(--primary); font-size: 2.2rem; }
-        header .desc { font-weight: bold; margin-top: 10px; line-height: 1.8; color: var(--secondary); }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>متجر موسى للإلكترونيات | بغداد</title>
 
-        .container { max-width: 1000px; margin: auto; padding: 20px; }
+<style>
+:root{
+  --primary:#2563eb;--secondary:#1e293b;--success:#22c55e;
+  --bg:#f8fafc;--text:#334155;--danger:#dc2626;
+}
+body{
+  font-family:'Segoe UI',Tahoma;
+  background:var(--bg);margin:0;color:var(--text);
+}
+.top-bar{
+  background:var(--secondary);color:#fff;
+  text-align:center;padding:10px;font-size:.85rem;
+}
+header{
+  background:#fff;padding:30px 20px;text-align:center;
+  border-bottom:3px solid var(--primary);
+}
+header h1{margin:0;color:var(--primary)}
+header .desc{font-weight:700;line-height:1.8}
 
-        /* قسم الثقة */
-        .why-us { background: white; padding: 20px; border-radius: 15px; border: 1px solid #ddd; margin-bottom: 30px; }
-        .why-us h2 { color: var(--primary); text-align: center; margin-top: 0; }
-        .why-us ul { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
-        .why-us li { background: #f1f5f9; padding: 10px; border-radius: 8px; font-weight: 500; text-align: center; }
+.container{max-width:1000px;margin:auto;padding:20px}
 
-        /* المنتجات */
-        .section-title { text-align: center; margin: 40px 0 20px; font-size: 1.8rem; }
-        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        .product-card { background: white; border-radius: 15px; padding: 20px; text-align: center; border: 1px solid #e2e8f0; transition: 0.3s; }
-        .product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-        .product-card img { width: 100%; height: 200px; object-fit: contain; margin-bottom: 15px; }
-        .price { color: var(--primary); font-weight: bold; font-size: 1.5rem; display: block; margin-bottom: 15px; }
-        .add-btn { background: var(--primary); color: white; border: none; padding: 12px; border-radius: 8px; width: 100%; cursor: pointer; font-weight: bold; }
+.why-us{
+  background:#fff;border:1px solid #ddd;
+  border-radius:15px;padding:20px;margin-bottom:30px
+}
+.why-us h2{text-align:center;color:var(--primary)}
+.why-us ul{
+  list-style:none;padding:0;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:10px
+}
+.why-us li{
+  background:#f1f5f9;padding:10px;
+  border-radius:8px;font-weight:500;text-align:center
+}
 
-        /* سلة التسوق العائمة */
-        .cart-footer { position: fixed; bottom: 0; left: 0; right: 0; background: white; padding: 15px; border-top: 2px solid var(--primary); display: flex; justify-content: space-around; align-items: center; box-shadow: 0 -5px 15px rgba(0,0,0,0.1); z-index: 100; }
-        .checkout-btn { background: var(--success); color: white; border: none; padding: 12px 30px; border-radius: 10px; font-weight: bold; cursor: pointer; }
+.section-title{text-align:center;font-size:1.8rem;margin:40px 0 20px}
 
-        /* نافذة التأكيد */
-        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); align-items: center; justify-content: center; }
-        .modal-content { background: white; padding: 25px; border-radius: 15px; width: 90%; max-width: 450px; text-align: center; }
-        .warning { color: #dc2626; font-size: 0.85rem; margin-top: 15px; display: block; }
-        .confirm-btn { background: var(--success); color: white; border: none; padding: 15px; border-radius: 8px; width: 100%; margin-top: 20px; font-weight: bold; cursor: pointer; }
+.products-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px
+}
+.product-card{
+  background:#fff;border:1px solid #e2e8f0;
+  border-radius:15px;padding:20px;text-align:center
+}
+.product-card img{
+  width:100%;height:200px;object-fit:contain;margin-bottom:15px
+}
+.price{color:var(--primary);font-size:1.5rem;font-weight:bold}
+.add-btn{
+  background:var(--primary);color:#fff;border:none;
+  padding:12px;border-radius:8px;width:100%;
+  font-weight:bold;cursor:pointer
+}
 
-        /* قسم الضمان */
-        .guarantee { background: #fffbeb; border: 1px solid #fef3c7; padding: 20px; border-radius: 15px; margin-top: 40px; }
+.cart-footer{
+  position:fixed;bottom:0;left:0;right:0;
+  background:#fff;border-top:2px solid var(--primary);
+  padding:15px;display:flex;justify-content:space-between;
+  align-items:center;z-index:100
+}
+.checkout-btn{
+  background:var(--success);color:#fff;
+  border:none;padding:12px 30px;border-radius:10px;
+  font-weight:bold;cursor:pointer
+}
 
-        footer { text-align: center; padding: 40px 20px 100px; background: var(--secondary); color: white; margin-top: 50px; }
-    </style>
+.toast{
+  position:fixed;bottom:90px;right:20px;
+  background:var(--success);color:#fff;
+  padding:10px 15px;border-radius:8px;
+  display:none;font-size:.9rem
+}
+
+.modal{
+  display:none;position:fixed;inset:0;
+  background:rgba(0,0,0,.7);
+  align-items:center;justify-content:center;z-index:1000
+}
+.modal-content{
+  background:#fff;border-radius:15px;
+  padding:20px;width:90%;max-width:450px
+}
+.cart-item{
+  display:flex;justify-content:space-between;
+  margin-bottom:8px;font-size:.9rem
+}
+.remove-btn{
+  color:var(--danger);cursor:pointer;font-size:.8rem
+}
+.confirm-btn{
+  background:var(--success);color:#fff;
+  border:none;width:100%;padding:14px;
+  border-radius:8px;font-weight:bold;margin-top:15px
+}
+.warning{color:var(--danger);font-size:.85rem;margin-top:10px}
+
+footer{
+  background:var(--secondary);color:#fff;
+  text-align:center;padding:40px 20px 100px;margin-top:50px
+}
+</style>
 </head>
+
 <body>
 
 <div class="top-bar">
-    📞 للطلبات: +964 771 753 8315 | ⏰ 10 صباحاً – 11 مساءً (السبت - الخميس)
+📞 +964 771 753 8315 | ⏰ 10 صباحاً – 11 مساءً
 </div>
 
 <header>
-    <h1>متجر موسى للإلكترونيات</h1>
-    <div class="desc">
-        📍 بغداد – الكرادة <br>
-        🚚 توصيل داخل بغداد خلال 24 ساعة <br>
-        💳 الدفع عند الاستلام – فحص قبل الدفع
-    </div>
+<h1>متجر موسى للإلكترونيات</h1>
+<div class="desc">
+📍 بغداد – الكرادة<br>
+🚚 توصيل داخل بغداد خلال 24 ساعة<br>
+💳 الدفع عند الاستلام – فحص قبل الدفع
+</div>
 </header>
 
 <div class="container">
-    <div class="why-us">
-        <h2>لماذا تختار متجر موسى؟</h2>
-        <ul>
-            <li>✔ منتجات أصلية 100%</li>
-            <li>✔ فحص المنتج عند الاستلام</li>
-            <li>✔ توصيل بغداد خلال 24 ساعة</li>
-            <li>✔ استبدال 7 أيام للخلل المصنعي</li>
-            <li>✔ دعم مباشر عبر واتساب</li>
-        </ul>
-    </div>
 
-    <h2 class="section-title">منتجاتنا المتوفرة حالياً</h2>
-    <div class="products-grid">
-        <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1610671914904-5d97d759cd7a?w=500" alt="ساعة">
-            <h3>ساعة سامسونج Galaxy Watch 6</h3>
-            <span class="price">285,000 د.ع</span>
-            <button class="add-btn" onclick="addToCart('ساعة سامسونج Watch 6', 285000)">أضف إلى الطلب 🛒</button>
-        </div>
-        <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1588423770574-910ae26c856f?w=500" alt="سماعة">
-            <h3>سماعات Apple Airpods 3</h3>
-            <span class="price">210,000 د.ع</span>
-            <button class="add-btn" onclick="addToCart('سماعات Apple Airpods 3', 210000)">أضف إلى الطلب 🛒</button>
-        </div>
-        <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1609592424089-9890374108e7?w=500" alt="شاحن">
-            <h3>باور بانك Anker السريع</h3>
-            <span class="price">55,000 د.ع</span>
-            <button class="add-btn" onclick="addToCart('باور بانك Anker', 55000)">أضف إلى الطلب 🛒</button>
-        </div>
-    </div>
+<div class="why-us">
+<h2>لماذا تختار متجر موسى؟</h2>
+<ul>
+<li>✔ منتجات أصلية 100%</li>
+<li>✔ فحص عند الاستلام</li>
+<li>✔ توصيل بغداد 24 ساعة</li>
+<li>✔ استبدال 7 أيام للخلل</li>
+<li>✔ دعم واتساب مباشر</li>
+</ul>
+</div>
 
-    <div class="guarantee">
-        <h3>🔒 الضمان وسياسة الاستبدال</h3>
-        <p>فحص المنتج عند الاستلام مسموح. يتم الاستبدال خلال 7 أيام في حال وجود خلل مصنعي فقط. لا يوجد استرجاع بعد الاستخدام. الطلبات داخل بغداد فقط.</p>
-    </div>
+<h2 class="section-title">منتجاتنا</h2>
+
+<div class="products-grid">
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1610671914904-5d97d759cd7a?w=500">
+<h3>Galaxy Watch 6</h3>
+<span class="price">285,000 د.ع</span>
+<button class="add-btn" onclick="addToCart('Galaxy Watch 6',285000)">أضف إلى الطلب 🛒</button>
+</div>
+
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1588423770574-910ae26c856f?w=500">
+<h3>Airpods 3</h3>
+<span class="price">210,000 د.ع</span>
+<button class="add-btn" onclick="addToCart('Airpods 3',210000)">أضف إلى الطلب 🛒</button>
+</div>
+</div>
+
 </div>
 
 <div class="cart-footer">
-    <div>المجموع: <b id="cart-total">0</b> د.ع</div>
-    <button class="checkout-btn" onclick="openModal()">إتمام الطلب عبر واتساب</button>
+<div>المجموع: <b id="total">0</b> د.ع</div>
+<button class="checkout-btn" onclick="openModal()">إتمام الطلب</button>
 </div>
 
-<div id="orderModal" class="modal">
-    <div class="modal-content">
-        <h3>تأكيد الطلب 📝</h3>
-        <p>أنت على وشك إرسال طلبك إلى متجر موسى.<br>التوصيل داخل بغداد فقط.<br>طريقة الدفع: <b>الدفع عند الاستلام</b>.</p>
-        <span class="warning">⚠ الطلبات الجدية فقط – سيتم الاتصال لتأكيد الطلب.</span>
-        <button class="confirm-btn" onclick="sendToWhatsapp()">تأكيد وإرسال الطلب عبر واتساب</button>
-        <button class="cancel-btn" onclick="closeModal()">إلغاء</button>
-    </div>
+<div class="toast" id="toast">تمت الإضافة إلى الطلب</div>
+
+<div class="modal" id="modal">
+<div class="modal-content">
+<h3>تأكيد الطلب</h3>
+<div id="cartItems"></div>
+<hr>
+<p><b>الدفع:</b> عند الاستلام</p>
+<p><b>التوصيل:</b> داخل بغداد</p>
+<span class="warning">⚠ الطلبات الجدية فقط</span>
+<button class="confirm-btn" onclick="sendWhatsApp()">إرسال الطلب عبر واتساب</button>
+</div>
 </div>
 
 <footer>
-    <p>جميع الحقوق محفوظة لمتجر موسى للإلكترونيات © 2026</p>
-    <small>الطلب داخل بغداد فقط – الدفع عند الاستلام فقط</small>
+<p>© متجر موسى للإلكترونيات 2026</p>
+<small>الطلب داخل بغداد فقط – الدفع عند الاستلام</small>
 </footer>
 
 <script>
-    let cart = [];
-    let total = 0;
+let cart={}, total=0;
 
-    function addToCart(name, price) {
-        cart.push(name);
-        total += price;
-        document.getElementById('cart-total').innerText = total.toLocaleString();
-        alert('تمت إضافة ' + name + ' إلى السلة');
-    }
+function showToast(){
+  let t=document.getElementById('toast');
+  t.style.display='block';
+  setTimeout(()=>t.style.display='none',2000);
+}
 
-    function openModal() {
-        if(cart.length === 0) return alert('الرجاء اختيار منتج أولاً');
-        document.getElementById('orderModal').style.display = 'flex';
-    }
+function addToCart(name,price){
+  cart[name]?cart[name].qty++:cart[name]={price,qty:1};
+  total+=price;
+  document.getElementById('total').innerText=total.toLocaleString();
+  showToast();
+}
 
-    function closeModal() {
-        document.getElementById('orderModal').style.display = 'none';
-    }
+function openModal(){
+  let items=document.getElementById('cartItems');
+  items.innerHTML='';
+  for(let n in cart){
+    items.innerHTML+=`
+    <div class="cart-item">
+      ${cart[n].qty} × ${n}
+      <span class="remove-btn" onclick="removeItem('${n}')">حذف</span>
+    </div>`;
+  }
+  document.getElementById('modal').style.display='flex';
+}
 
-    function sendToWhatsapp() {
-        let phone = "9647717538315";
-        let productsList = cart.join('\n- ');
-        let message = `السلام عليكم متجر موسى 👋\n\nأرغب بتأكيد طلب من داخل بغداد، التفاصيل:\n\n🛒 المنتجات:\n- ${productsList}\n\n💰 المجموع الكلي: ${total.toLocaleString()} د.ع\n\n📍 المحافظة: بغداد\n🚚 التوصيل: داخل بغداد\n💳 طريقة الدفع: الدفع عند الاستلام\n\n✅ ملاحظة:\n- فحص المنتج عند الاستلام\n- الاستبدال خلال 7 أيام بخلل مصنعي فقط\n\nالاسم:\nالعنوان التقريبي:\n\nبانتظار تأكيدكم، شكراً 🌹`;
-        
-        window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
-        closeModal();
-    }
+function removeItem(name){
+  total-=cart[name].price*cart[name].qty;
+  delete cart[name];
+  document.getElementById('total').innerText=total.toLocaleString();
+  openModal();
+}
+
+function sendWhatsApp(){
+  let msg="السلام عليكم متجر موسى 👋\n\nطلب من داخل بغداد:\n";
+  for(let n in cart){
+    msg+=`${cart[n].qty} × ${n}\n`;
+  }
+  msg+=`\nالمجموع: ${total.toLocaleString()} د.ع\nالدفع عند الاستلام`;
+  window.open("https://wa.me/9647717538315?text="+encodeURIComponent(msg));
+}
 </script>
 
 </body>
