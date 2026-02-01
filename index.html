@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>متجر موسى للإلكترونيات | بغداد</title>
+<title>متجر موسى للتكنولوجيا المتطورة | بغداد</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 <style>
 :root{
   --primary:#1e40af; --secondary:#0f172a; --accent:#22c55e;
   --bg:#f1f5f9; --card:#ffffff; --text:#1e293b;
-  --muted:#64748b; --danger:#dc2626;
+  --muted:#64748b; --danger:#dc2626; --tech:#8b5cf6;
 }
 body{margin:0;font-family:'Segoe UI', Tahoma, sans-serif;background:var(--bg);color:var(--text)}
 
@@ -22,11 +22,11 @@ header h1{margin:0;color:var(--primary); font-size: 2.2rem;}
 header .desc{margin-top:10px;line-height:1.9;font-weight:600;color:var(--secondary)}
 
 .hero-banner {
-    background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+    background: linear-gradient(135deg, #1e40af 0%, #8b5cf6 100%);
     color: white; padding: 40px 20px; text-align: center; border-radius: 20px; margin: 20px; box-shadow: 0 10px 20px rgba(30, 64, 175, 0.2);
 }
 
-.container{max-width:1100px;margin:auto;padding:20px}
+.container{max-width:1300px;margin:auto;padding:20px}
 
 .why-us{background:var(--card);border-radius:16px;padding:25px;border:1px solid #e5e7eb;margin-bottom:40px;}
 .why-us h2{text-align:center;color:var(--primary); margin-bottom: 20px;}
@@ -35,11 +35,13 @@ header .desc{margin-top:10px;line-height:1.9;font-weight:600;color:var(--seconda
 .why-us li i { display: block; color: var(--accent); font-size: 1.5rem; margin-bottom: 10px; }
 
 .section-title{text-align:center;font-size:1.9rem;margin-bottom:25px;}
+.category-title{color:var(--tech);margin-top:40px;padding-right:15px;border-right:4px solid var(--tech);}
 .products-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px}
 
 .product-card{background:var(--card);border-radius:18px;padding:20px;text-align:center;border:1px solid #e5e7eb;transition:.3s; position: relative;}
 .product-card:hover{transform:translateY(-8px);box-shadow:0 15px 30px rgba(0,0,0,0.1)}
 .product-card img{width:100%;height:200px;object-fit:contain;margin-bottom:15px;}
+.tech-badge{position:absolute;top:15px;left:15px;background:var(--tech);color:white;padding:5px 10px;border-radius:20px;font-size:0.8rem;}
 
 .price{color:var(--primary);font-size:1.6rem;font-weight:700; display: block; margin: 10px 0;}
 .add-btn{width:100%;background:var(--primary);color:#fff;border:none;padding:14px;border-radius:12px;font-weight:bold;cursor:pointer; display: flex; align-items: center; justify-content: center; gap: 8px;}
@@ -50,11 +52,14 @@ header .desc{margin-top:10px;line-height:1.9;font-weight:600;color:var(--seconda
 .toast{position:fixed;bottom:100px;right:20px;background:var(--secondary);color:#fff;padding:12px 20px;border-radius:12px;display:none;font-size:.9rem; z-index: 1001;}
 
 .modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);align-items:center;justify-content:center;z-index:1000; padding: 15px;}
-.modal-content{background:var(--card);width:100%;max-width:480px;border-radius:20px;padding:30px; position: relative;}
+.modal-content{background:var(--card);width:100%;max-width:500px;border-radius:20px;padding:30px; position: relative;}
 .cart-item{display:flex;justify-content:space-between;padding:10px 0;border-bottom: 1px solid #eee;}
 .remove{color:var(--danger);cursor:pointer; font-size: 0.8rem;}
 
-input{width:100%;padding:14px;margin-top:12px;border-radius:12px;border:1px solid #cbd5e1;font-size:1rem; box-sizing: border-box;}
+.input-group{margin-bottom:15px;}
+label{display:block;margin-bottom:5px;font-weight:500;}
+input{width:100%;padding:14px;border-radius:12px;border:1px solid #cbd5e1;font-size:1rem; box-sizing: border-box;}
+.optional{color:var(--muted);font-size:0.85rem;}
 
 .confirm-btn{margin-top:15px;width:100%;background:var(--accent);color:#fff;border:none;padding:16px;border-radius:12px;font-weight:bold;cursor:pointer;}
 .warning{margin-top:15px;color:var(--danger);font-size:.85rem; background: #fff1f2; padding: 10px; border-radius: 8px;}
@@ -73,18 +78,18 @@ footer a{color:var(--accent);text-decoration:none;}
 </div>
 
 <header>
-    <h1>متجر موسى للإلكترونيات</h1>
+    <h1>متجر موسى للتكنولوجيا المتطورة</h1>
     <div class="desc">
-        📍 بغداد – الكرادة<br>
-        🚚 توصيل داخل بغداد خلال 24 ساعة<br>
-        💳 الدفع عند الاستلام – فحص قبل الدفع
+        🌍 خدمة الشحن الدولي المتاحة<br>
+        🚚 توصيل سريع داخل العراق وخارجه<br>
+        💳 دفع آمن متعدد الخيارات
     </div>
 </header>
 
 <div class="container">
     <div class="hero-banner">
-        <h2>أهلاً بك في متجر موسى 🚀</h2>
-        <p>أفضل المنتجات الأصلية مع ضمان الفحص قبل الدفع</p>
+        <h2>🚀 المستقبل بين يديك</h2>
+        <p>أحدث تقنيات 2025 من الذكاء الاصطناعي، الألعاب، والمنزل الذكي</p>
     </div>
 
     <div class="why-us">
@@ -92,18 +97,29 @@ footer a{color:var(--accent);text-decoration:none;}
         <ul>
             <li><i class="fas fa-check-circle"></i> منتجات أصلية 100%</li>
             <li><i class="fas fa-search"></i> فحص المنتج عند الاستلام</li>
-            <li><i class="fas fa-truck"></i> توصيل بغداد خلال 24 ساعة</li>
-            <li><i class="fas fa-shield-alt"></i> استبدال 7 أيام للخلل</li>
-            <li><i class="fab fa-whatsapp"></i> دعم مباشر عبر واتساب</li>
+            <li><i class="fas fa-globe"></i> شحن دولي لجميع البلدان</li>
+            <li><i class="fas fa-shield-alt"></i> ضمان عالمي من المصنع</li>
+            <li><i class="fab fa-whatsapp"></i> دعم 24/7 عبر واتساب</li>
         </ul>
     </div>
 
-    <h2 class="section-title">منتجاتنا المتوفرة</h2>
-    <div class="products-grid" id="productsGrid"></div>
+    <h2 class="section-title">تقنيات المستقبل المتاحة الآن</h2>
+
+    <h3 class="category-title">🎮 أجهزة الجيمينج الاحترافية</h3>
+    <div class="products-grid" id="gamingProducts"></div>
+
+    <h3 class="category-title">🏠 المنزل الذكي والأتمتة</h3>
+    <div class="products-grid" id="smartHomeProducts"></div>
+
+    <h3 class="category-title">🤖 الروبوتات والذكاء الاصطناعي</h3>
+    <div class="products-grid" id="aiProducts"></div>
+
+    <h3 class="category-title">🎧 الأجهزة القابلة للارتداء</h3>
+    <div class="products-grid" id="wearableProducts"></div>
 
     <div class="guarantee">
-        <h3><i class="fas fa-lock"></i> الضمان وسياسة الاستبدال</h3>
-        <p>فحص المنتج عند الاستلام مسموح. الاستبدال خلال 7 أيام في حال وجود خلل مصنعي فقط. لا يوجد استرجاع بعد الاستخدام. الطلبات داخل بغداد فقط.</p>
+        <h3><i class="fas fa-lock"></i> سياسة المرونة العالمية</h3>
+        <p>نقبل الشحن لأي دولة. الرجوع والاستبدال متاح حسب سياسة كل دولة. الدفع عند الاستلام متاح داخل العراق، وخارجه نقدم خيارات دفع آمنة متعددة.</p>
     </div>
 </div>
 
@@ -116,14 +132,31 @@ footer a{color:var(--accent);text-decoration:none;}
 
 <div class="modal" id="modal">
     <div class="modal-content">
-        <h3>تأكيد الطلب 📝</h3>
-        <div id="cartItems" style="max-height: 150px; overflow-y: auto; margin-bottom: 15px;"></div>
-        <input id="customerName" placeholder="الاسم الكامل">
-        <input id="customerLocation" placeholder="الموقع / العنوان التقريبي">
-        <div class="warning"><i class="fas fa-exclamation-triangle"></i> الطلبات الجدية فقط – سيتم الاتصال لتأكيد الطلب</div>
-        <button class="confirm-btn" onclick="sendWhatsApp()">تأكيد وإرسال للواتساب</button>
-        <button class="confirm-btn" style="background:#f1f5f9;color:#1e293b" onclick="requestClear()">حذف السلة</button>
-        <button class="confirm-btn" style="background:#64748b" onclick="closeModal()">رجوع</button>
+        <h3>🛒 تأكيد الطلب الدولي</h3>
+        <div id="cartItems" style="max-height: 200px; overflow-y: auto; margin-bottom: 20px; padding: 10px; border: 1px solid #e5e7eb; border-radius: 10px;"></div>
+        
+        <div class="input-group">
+            <label for="customerName">👤 الاسم الكامل *</label>
+            <input id="customerName" placeholder="الاسم الثلاثي">
+        </div>
+        
+        <div class="input-group">
+            <label for="customerLocation">📍 العنوان الكامل *</label>
+            <input id="customerLocation" placeholder="أدخل العنوان كاملاً (أي دولة، أي مدينة)">
+            <div class="optional">يمكنك كتابة العنوان باللغة العربية أو الإنجليزية</div>
+        </div>
+        
+        <div class="input-group">
+            <label for="customerPhone">📱 رقم الهاتف <span class="optional">(اختياري)</span></label>
+            <input id="customerPhone" placeholder="+964 或 +1 或 +44 ... أي رقم عالمي">
+            <div class="optional">للتواصل السريع، يمكن ترك هذا الحقل فارغاً</div>
+        </div>
+        
+        <div class="warning"><i class="fas fa-exclamation-triangle"></i> تأكد من صحة العنوان للشحن الدولي</div>
+        
+        <button class="confirm-btn" onclick="sendWhatsApp()"><i class="fab fa-whatsapp"></i> تأكيد وإرسال للواتساب</button>
+        <button class="confirm-btn" style="background:#f1f5f9;color:#1e293b" onclick="requestClear()">🗑️ حذف السلة</button>
+        <button class="confirm-btn" style="background:#64748b" onclick="closeModal()">↩ رجوع</button>
     </div>
 </div>
 
@@ -137,83 +170,227 @@ footer a{color:var(--accent);text-decoration:none;}
 </div>
 
 <footer>
-    <p>© متجر موسى للإلكترونيات 2026</p>
-    <p>📧 <a href="mailto:mousasaleh2024@gmail.com">mousasaleh2024@gmail.com</a></p>
+    <p>© 2025 متجر موسى للتكنولوجيا المتطورة - خدمة دولية</p>
+    <p>🌍 <a href="mailto:mousasaleh2024@gmail.com">mousasaleh2024@gmail.com</a> | 📱 واتساب دولي متاح 24/7</p>
 </footer>
 
 <script>
-const products=[
-{name:"Apple Watch Series 9",price:520000,image:"https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=500"},
-{name:"Galaxy Watch 6",price:285000,image:"https://images.unsplash.com/photo-1610671914904-5d97d759cd7a?w=500"},
-{name:"AirPods Pro 2",price:310000,image:"https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?w=500"},
-{name:"Samsung Buds 2 Pro",price:195000,image:"https://images.unsplash.com/photo-1612197527278-4caa7c35a3c4?w=500"},
-{name:"رأس شاحن Apple 20W",price:35000,image:"https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=500"},
-{name:"وصلة Type-C أصلية",price:15000,image:"https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=500"},
-{name:"باور بانك Anker 20,000mAh",price:55000,image:"https://images.unsplash.com/photo-1609592424089-9890374108e7?w=500"},
-{name:"نظارة Apple Vision Pro",price:4800000,image:"https://images.unsplash.com/photo-1700064760148-ec5b5b52f6b3?w=500"}
-];
+// 📦 قاعدة بيانات المنتجات الموسعة مع تقنيات حديثة
+const products = {
+    gaming: [
+        {name:"PlayStation 5 Pro", price:850000, image:"https://images.unsplash.com/photo-1606144042614-b2417e99c4e3", badge:"جيمينج", category:"gaming"},
+        {name:"Xbox Series X Elite", price:780000, image:"https://images.unsplash.com/photo-1605901309584-818e25960a8f", badge:"أقوى أداء", category:"gaming"},
+        {name:"RTX 4090 Gaming PC", price:4200000, image:"https://images.unsplash.com/photo-1593640408182-31c70c8268f5", badge:"4K Gaming", category:"gaming"},
+        {name:"Razer Blade 18", price:3500000, image:"https://images.unsplash.com/photo-1517336714731-489689fd1ca8", badge:"لابتوب جيمينج", category:"gaming"},
+        {name:"Steam Deck OLED", price:950000, image:"https://images.unsplash.com/photo-1550745165-9bc0b252726f", badge:"محمول", category:"gaming"}
+    ],
+    smartHome: [
+        {name:"Apple HomePod 2", price:650000, image:"https://images.unsplash.com/photo-1543512214-318c7553f230", badge:"منزل ذكي", category:"smartHome"},
+        {name:"Robot Vacuum X10", price:420000, image:"https://images.unsplash.com/photo-1558618666-fcd25c85cd64", badge:"روبوت تنظيف", category:"smartHome"},
+        {name:"Smart Fridge AI", price:2800000, image:"https://images.unsplash.com/photo-1584568694241-45c009b0e114", badge:"ثلاجة ذكية", category:"smartHome"},
+        {name:"Security Drone Home", price:1200000, image:"https://images.unsplash.com/photo-1473968512647-3e447244af8f", badge:"درون مراقبة", category:"smartHome"},
+        {name:"Smart Lighting System", price:350000, image:"https://images.unsplash.com/photo-1558618666-fcd25c85cd64", badge:"إضاءة ذكية", category:"smartHome"}
+    ],
+    ai: [
+        {name:"Tesla Optimus Robot", price:15000000, image:"https://images.unsplash.com/photo-1677442136019-21780ecad995", badge:"روبوت بشري", category:"ai"},
+        {name:"AI Assistant Glasses", price:850000, image:"https://images.unsplash.com/photo-1543512214-318c7553f230", badge:"نظارات ذكية", category:"ai"},
+        {name:"Quantum Learning Tablet", price:1850000, image:"https://images.unsplash.com/photo-1546054452-2a6e04aa2c93", badge:"تعلم ذكي", category:"ai"},
+        {name:"Neuralink Development Kit", price:9500000, image:"https://images.unsplash.com/photo-1558618666-fcd25c85cd64", badge:"تكنولوجيا عصبية", category:"ai"},
+        {name:"Autonomous Delivery Bot", price:3200000, image:"https://images.unsplash.com/photo-1473968512647-3e447244af8f", badge:"توصيل ذاتي", category:"ai"}
+    ],
+    wearable: [
+        {name:"Apple Vision Pro 2", price:5200000, image:"https://images.unsplash.com/photo-1543512214-318c7553f230", badge:"واقع معزز", category:"wearable"},
+        {name:"Fitbit Health AI", price:380000, image:"https://images.unsplash.com/photo-1558618666-fcd25c85cd64", badge:"تتبع صحي", category:"wearable"},
+        {name:"Samsung Galaxy Ring", price:280000, image:"https://images.unsplash.com/photo-1543512214-318c7553f230", badge:"خاتم ذكي", category:"wearable"},
+        {name:"VR Gaming Headset Pro", price:1250000, image:"https://images.unsplash.com/photo-1550745165-9bc0b252726f", badge:"واقع افتراضي", category:"wearable"},
+        {name:"Smart Running Shoes", price:450000, image:"https://images.unsplash.com/photo-1542291026-7eec264c27ff", badge:"حذاء ذكي", category:"wearable"}
+    ]
+};
 
-const grid=document.getElementById("productsGrid");
-products.forEach(p=>{
-grid.innerHTML+=`<div class="product-card"><img src="${p.image}"><h3>${p.name}</h3><span class="price">${p.price.toLocaleString()} د.ع</span><button class="add-btn" onclick="addToCart('${p.name}',${p.price})"><i class="fas fa-plus"></i> أضف للطلب</button></div>`;
+// عرض المنتجات حسب الفئة
+function displayProducts() {
+    const categories = ['gaming', 'smartHome', 'ai', 'wearable'];
+    
+    categories.forEach(category => {
+        const container = document.getElementById(category + 'Products');
+        if (!container) return;
+        
+        products[category].forEach(product => {
+            container.innerHTML += `
+                <div class="product-card">
+                    ${product.badge ? `<span class="tech-badge">${product.badge}</span>` : ''}
+                    <img src="${product.image}?w=500" alt="${product.name}">
+                    <h3>${product.name}</h3>
+                    <span class="price">${product.price.toLocaleString()} د.ع</span>
+                    <button class="add-btn" onclick="addToCart('${product.name}', ${product.price})">
+                        <i class="fas fa-plus"></i> أضف للطلب
+                    </button>
+                </div>
+            `;
+        });
+    });
+}
+
+// نظام السلة
+let cart = JSON.parse(localStorage.getItem("cart")) || {};
+let total = JSON.parse(localStorage.getItem("total")) || 0;
+document.getElementById("total").innerText = total.toLocaleString();
+
+function saveCart() { 
+    localStorage.setItem("cart", JSON.stringify(cart)); 
+    localStorage.setItem("total", JSON.stringify(total)); 
+}
+
+function addToCart(name, price) {
+    if (cart[name]) {
+        cart[name].qty++;
+    } else {
+        cart[name] = { price: price, qty: 1 };
+    }
+    
+    total += price;
+    document.getElementById("total").innerText = total.toLocaleString();
+    saveCart();
+    
+    document.getElementById("toast").style.display = "block";
+    setTimeout(() => document.getElementById("toast").style.display = "none", 1500);
+}
+
+function openModal() {
+    if (Object.keys(cart).length === 0) {
+        alert('🛒 السلة فارغة. أضف بعض المنتجات أولاً!');
+        return;
+    }
+    
+    let items = document.getElementById("cartItems");
+    items.innerHTML = "";
+    let itemCount = 0;
+    
+    for (let name in cart) {
+        let item = cart[name];
+        let itemTotal = item.price * item.qty;
+        itemCount += item.qty;
+        
+        items.innerHTML += `
+            <div class="cart-item">
+                <span>${item.qty} × ${name}</span>
+                <span>${itemTotal.toLocaleString()} د.ع</span>
+                <span class="remove" onclick="removeItem('${name}')">🗑️</span>
+            </div>
+        `;
+    }
+    
+    items.innerHTML += `
+        <hr style="margin: 10px 0;">
+        <div class="cart-item">
+            <strong>${itemCount} قطعة</strong>
+            <strong>${total.toLocaleString()} د.ع</strong>
+        </div>
+    `;
+    
+    document.getElementById("modal").style.display = "flex";
+}
+
+function closeModal() { 
+    document.getElementById("modal").style.display = "none"; 
+}
+
+function removeItem(name) {
+    total -= cart[name].price * cart[name].qty;
+    delete cart[name];
+    saveCart();
+    document.getElementById("total").innerText = total.toLocaleString();
+    openModal();
+}
+
+function requestClear() { 
+    document.getElementById("confirmModal").style.display = "flex"; 
+}
+
+function closeConfirm() { 
+    document.getElementById("confirmModal").style.display = "none"; 
+}
+
+function confirmAction() {
+    cart = {}; 
+    total = 0; 
+    saveCart(); 
+    document.getElementById("total").innerText = "0"; 
+    closeModal(); 
+    closeConfirm();
+}
+
+// 🚀 دالة إرسال واتساب محسنة - تدعم العناوين الدولية والأرقام العالمية
+function sendWhatsApp() {
+    let name = document.getElementById("customerName").value.trim();
+    let location = document.getElementById("customerLocation").value.trim();
+    let phone = document.getElementById("customerPhone").value.trim();
+    
+    // التحقق من الحقول الإجبارية فقط
+    if (!name) {
+        alert("❗ الرجاء إدخال الاسم الكامل");
+        document.getElementById("customerName").focus();
+        return;
+    }
+    
+    if (!location) {
+        alert("❗ الرجاء إدخال العنوان للشحن");
+        document.getElementById("customerLocation").focus();
+        return;
+    }
+    
+    // بناء قائمة المنتجات مع التفاصيل
+    let productList = "";
+    let itemCount = 0;
+    
+    for (let productName in cart) {
+        let item = cart[productName];
+        let itemTotal = item.price * item.qty;
+        itemCount += item.qty;
+        
+        productList += `• ${productName}\n  العدد: ${item.qty} × ${item.price.toLocaleString()} د.ع = ${itemTotal.toLocaleString()} د.ع\n\n`;
+    }
+    
+    // بناء الرسالة النهائية
+    let message = `🌍 *طلب دولي - متجر موسى للتكنولوجيا*\n\n` +
+                  `👤 *العميل:* ${name}\n` +
+                  `📍 *العنوان:* ${location}\n` +
+                  (phone ? `📱 *الهاتف:* ${phone}\n\n` : `📱 *الهاتف:* لم يتم تقديمه\n\n`) +
+                  `🛒 *تفاصيل الطلب (${itemCount} قطعة):*\n${productList}` +
+                  `💰 *المجموع الكلي:* ${total.toLocaleString()} *دينار عراقي*\n\n` +
+                  `🚚 *معلومات الشحن:*\n` +
+                  `- الشحن الدولي متاح\n` +
+                  `- الوقت التقديري: 7-14 يوم عمل\n` +
+                  `- التكلفة حسب الوجهة\n\n` +
+                  `💳 *خيارات الدفع:*\n` +
+                  `1. PayPal\n` +
+                  `2. تحويل بنكي\n` +
+                  `3. Western Union\n` +
+                  `4. الدفع عند الاستلام (العراق فقط)\n\n` +
+                  `📋 *ملاحظات إضافية:*\n__________\n\n` +
+                  `⚡ *تم إنشاء الطلب تلقائياً عبر الموقع*`;
+    
+    // إرسال عبر واتساب
+    window.open("https://wa.me/9647717538315?text=" + encodeURIComponent(message));
+    
+    // تنظيف السلة بعد الإرسال
+    setTimeout(() => {
+        cart = {}; 
+        total = 0; 
+        saveCart();
+        document.getElementById("total").innerText = "0";
+        document.getElementById("customerName").value = "";
+        document.getElementById("customerLocation").value = "";
+        document.getElementById("customerPhone").value = "";
+        closeModal();
+        alert("✅ تم إرسال طلبك بنجاح! سيتم التواصل معك قريباً.");
+    }, 1000);
+}
+
+// تهيئة الصفحة
+document.addEventListener("DOMContentLoaded", function() {
+    displayProducts();
 });
-
-let cart=JSON.parse(localStorage.getItem("cart"))||{};
-let total=JSON.parse(localStorage.getItem("total"))||0;
-document.getElementById("total").innerText=total.toLocaleString();
-
-function saveCart(){ localStorage.setItem("cart",JSON.stringify(cart)); localStorage.setItem("total",JSON.stringify(total)); }
-
-function addToCart(n,p){
-cart[n]?cart[n].qty++:cart[n]={price:p,qty:1}; total+=p;
-document.getElementById("total").innerText=total.toLocaleString(); saveCart();
-document.getElementById("toast").style.display="block"; setTimeout(()=>document.getElementById("toast").style.display="none",1500);
-}
-
-function openModal(){
-let items=document.getElementById("cartItems"); items.innerHTML=""; let count=0;
-for(let n in cart){ count++; items.innerHTML+=`<div class="cart-item"><span>${cart[n].qty} × ${n}</span><span class="remove" onclick="removeItem('${n}')">حذف</span></div>`; }
-if(count===0) return alert('السلة فارغة'); document.getElementById("modal").style.display="flex";
-}
-
-function closeModal(){ document.getElementById("modal").style.display="none"; }
-function removeItem(n){ total-=cart[n].price*cart[n].qty; delete cart[n]; saveCart(); document.getElementById("total").innerText=total.toLocaleString(); openModal(); }
-
-function requestClear(){ document.getElementById("confirmModal").style.display="flex"; }
-function closeConfirm(){ document.getElementById("confirmModal").style.display="none"; }
-function confirmAction(){ cart={}; total=0; saveCart(); document.getElementById("total").innerText="0"; closeModal(); closeConfirm(); }
-
-function sendWhatsApp(){
-let name=document.getElementById("customerName").value.trim();
-let location=document.getElementById("customerLocation").value.trim();
-if(!name || !location){alert("يرجى إكمال البيانات");return;}
-
-let list=""; for(let n in cart){list+=`- ${n} (العدد: ${cart[n].qty})\n`;}
-
-// هذه هي الصيغة التفصيلية "الفاتورة" التي طلبتها:
-let msg=`السلام عليكم متجر موسى 👋
-
-أرغب بتأكيد طلب من داخل بغداد، التفاصيل:
-
-🛒 المنتجات:
-${list}
-💰 المجموع الكلي: ${total.toLocaleString()} د.ع
-
-📍 المحافظة: بغداد
-📍 الموقع: ${location}
-🚚 التوصيل: داخل بغداد
-💳 طريقة الدفع: الدفع عند الاستلام
-
-✅ ملاحظة:
-- فحص المنتج عند الاستلام
-- الاستبدال خلال 7 أيام بخلل مصنعي فقط
-
-الاسم: ${name}
-
-بانتظار تأكيدكم، شكراً 🌹`;
-
-window.open("https://wa.me/9647717538315?text="+encodeURIComponent(msg));
-}
 </script>
 
 </body>
